@@ -30,7 +30,7 @@ twitter_username: None
 github_username:  pbbqdd
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: minimal
 plugins:
   - jekyll-feed
 
