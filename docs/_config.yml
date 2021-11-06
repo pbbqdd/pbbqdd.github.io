@@ -30,7 +30,7 @@ twitter_username: None
 github_username:  pbbqdd
 
 # Build settings
-theme: minima
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
   - jekyll-coffeescript
