@@ -1,0 +1,33 @@
+---
+layout: "post"
+title: "linux上的语音输入法？"
+date: "2021-12-31 22:44"
+---
+#### 嗯
+　　最越来越懒了,懒得连字不想打了。前几天趁着联通活动买了一个天猫精灵，没事就想调戏调戏它，越发觉得其实语音输入是方便的。大框架使用语音输入，个别地方使用输入法精确修改，写文章效率大大地。  
+　　习惯使用linux作为主操作系统但是linux上几乎没有好用或者能用的语音输入法。翻阅一下google,主要的方法是用google语音方案，有几个在线的比如google doc和[dictation.io/speech](https://dictation.io/speech)也使用的google方案提供了一个简单的在线编辑器。而讯飞方案基本是手机和win,而本地方案几乎没什么好用的。其他本地变通的方法还是有的，linux有个无敌的应用[kdeconnect](https://kdeconnect.kde.org)，这是一款让手机和电脑相互通信的软件，它可以手机电脑之间推送短信发送文件等，特别的还有一个远程输入的功能，这有点类似手机输入法的跨屏输入。对于中文语音输入法，还是科大讯飞的语音输入比较利索。而使用平台当然不希望还要开着一个手机，那么不如使用安卓的模拟器好了至少占用资源少点，而且功能还足够强。具体用哪一种模拟器，我使用的是谷歌android SDK自带的模拟器。因为比较方便，x86平台直接就可以安装讯飞输入法。而Genymotion还需要安装一个arm的编译器。这里我就不再赘述了。  
+　　但是这里遇到了几个问题，首先是gnome环境x window下的GSconnect不支持unicode,所以不能输入中文甚至英文单词都成问题。而wayland的方案对于手写板支持会导致双光标问题。（已经抛弃鼠标，经过近一年的使用手写板，感觉板子其实在办公和日常浏览网页上比鼠标效率更高更顺手和舒服，啥时候没问题的了再用）而只能使用kdeconnect。  
+　　其次android sdk模拟器默认是使用一个在本机路由下的网络，这导致kdeconnnect在局域网下搜索不到主机。要么使用android官方给的方法对KC相应端口做端口转发，可是又有一个问题，KC的端口是一连串的几个端口，但是官方给的例子似乎不能转发端口段？或者写脚本循环一下。再或者直接使用桥接模式。这里主要说一下android sdk emulator的桥接例子。  
+　　桥接AVD有个隐藏命令```-net-tap <tapname>```官方似乎有意不提，具体就是将主机的tap和avd网卡绑定,这个可以用
+``` ~/Android/Sdk/emulator/emulator -avd <avd name> -net-tap <tapname> & ```一个命令完成avd的启动。
+具体配置tap接口和桥接比麻烦。以下是相关指令。可以创建一个脚本用root执行。
+```
+brctl addbr br0 #创建br0网桥
+ip tuntap add dev tap0 mode tap #创建tap0接口
+brctl addif br0 tap0 #将tap0桥接
+brctl addif br0 eno1 #将主机网卡桥接
+ip link set dev br0 up #br0上线
+ip link set dev tap0 up #tap0上线
+iptables -A INPUT -i tap0 -j ACCEPT #iptable的配置接受tap0和br0的入站
+iptables -A INPUT -i br0 -j ACCEPT
+iptables -A FORWARD -i br0 -j ACCEPT #将流量转发到br0
+dhclient br0 #为br0分配ip
+```
+avd启动后需要在模拟器旁边的setting里的microphone标签勾选
+>virtual microphone use host audio input
+
+即可启用主机mic进行录音。
+也可使用命令行```adb emu avd hostmicon```
+好了又来了一个问题。使用模拟器时输入光标怎么处理？，好在讯飞有长文输入让模拟器后面带着就行。到主机的setting里给mic静音设置一个快捷键即可防止随意录制了。
+又好了又来了一个问题，长文输入tmd和KC又有兼容问题了。长文输入好像是根据上下文内容用一块缓存存储上面输入的文字，这导致上下文变化会让输出乱序。开始还不错用，而长时间使用就完了。还是找个快捷键看看。谁有办法帮我解决解决？晕～
+## 待续...
