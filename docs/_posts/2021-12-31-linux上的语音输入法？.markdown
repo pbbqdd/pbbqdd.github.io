@@ -12,7 +12,7 @@ date: "2021-12-31 22:44"
 ``` ~/Android/Sdk/emulator/emulator -avd <avd name> -net-tap <tapname> & ```一个命令完成avd的启动。
 具体配置tap接口和桥接比麻烦。以下是相关指令。可以创建一个脚本用root执行。
 ```
-brctl addbr br0 #创建br0网桥
+addbr br0 #创建br0网桥
 ip tuntap add dev tap0 mode tap #创建tap0接口
 brctl addif br0 tap0 #将tap0桥接
 brctl addif br0 eno1 #将主机网卡桥接
@@ -27,7 +27,7 @@ avd启动后需要在模拟器旁边的setting里的microphone标签勾选
 >virtual microphone use host audio input
 
 即可启用主机mic进行录音。
-也可使用命令行```adb emu avd hostmicon```  
+也可使用命令行`adb emu avd hostmicon`
 　　好了又来了一个问题。使用模拟器时输入光标怎么处理？，好在讯飞有长文输入让模拟器后面带着就行。到主机的setting里给mic静音设置一个快捷键即可防止随意录制了。  
 　　又好了又来了一个问题，长文输入tmd和KC又有兼容问题了。长文输入好像是根据上下文内容用一块缓存存储上面输入的文字，这导致上下文变化会让输出乱序。开始还不错用，而长时间使用就完了。还是找个快捷键看看。谁有办法帮我解决解决？晕～
 ## 待续...
