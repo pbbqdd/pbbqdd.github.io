@@ -25,18 +25,20 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
  <!-- Gitalk comment start  -->
 
  <!-- Link Gitalk  -->
  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
- <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+ <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
  <div id="gitalk-container"></div>     <script type="text/javascript">
      var gitalk = new Gitalk({
 
      // Gitalk parameters
          clientID: 'f42028f6052824685e3e', //customize
          clientSecret: 'dbe198cc6d60229964e68d6401494f8c79890e0e', //customize
-         repo: 'https://github.com/pbbqdd/comments.git', //customize
+         repo: 'pbbqdd.github.io', //customize
          owner: 'pbbqdd', //customize
          admin: ['pbbqdd'], //customize
          id: location.pathname, // leave this line as it is
