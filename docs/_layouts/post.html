@@ -41,7 +41,7 @@ layout: default
          repo: 'pbbqdd.github.io', //customize
          owner: 'pbbqdd', //customize
          admin: ['pbbqdd'], //customize
-         id: location.pathname, // leave this line as it is
+         id: md5(location.pathname), // leave this line as it is
         
      });
      gitalk.render('gitalk-container');
