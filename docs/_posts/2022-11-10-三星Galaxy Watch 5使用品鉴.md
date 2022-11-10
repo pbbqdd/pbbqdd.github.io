@@ -32,15 +32,12 @@ gw4的国行手表配对教程主要是这一篇。gw5就不多说了有需要�
 **三星**账号归属是美国，导致和国行手表冲突。不能同步step 不能备份，不能各种舒服。解决方法是XPrivacyLua插件。之所以使用这个插件是因为定制化高，免费。这个插件可以自定义各种钩子，本来想尝试用此插件一起解决1的问题，但是好像没搞通。使用这个插件比较麻烦，主要的钩子项是TelephonyManager/getSimOperatin设置的给的运营商代号310440即可。需要拦截三星健康和穿戴相关程序让sim卡的归属到美国来解锁美国的相关功能。具体玩法参考[This](https://blog.1a23.com/2020/03/25/switch-galaxy-wearable-store-location-using-xprivacylua/)。可以直接在原脚本上赋值`fake=‘310410’`然后勾选即可。但是这个方法解决不了galaxy store 的中国版问题。手表上依然只能使用国行的市场。  
 ![Screenshot_20221110-012413_XPrivacyLua Pro.png](/assets/img/fd964aa6688a4aa39c618f6496122839.png)
 
-1.  **支付宝和微信步数同步问题。**  
+3.  **支付宝和微信步数同步问题。**  
 **微信**同步比较简单，下载“三星健康步数排行插件”即可解决，在play中下载一个Shortcut Maker创建一个插件的activaty即可激活插件，每次手动登陆微信运动才可同步步数。支付宝比较复杂需要将使用2的插件将Build.MANUFACTURER里的值设置成“samsung”并钩到支付宝上，这时候支付宝运动的设置里就多了可以和三星健康同步的设置了。如果有其他这种可以修改设置的插件也可以试试。  
-
-![Screenshot_20221110-014027_三星健康步数排行插件.png](/assets/img/ecc55adf02424279995176b6d25e4373.png)
-
-
+![Screenshot_20221110-014027_三星健康步数排行插件.png](/assets/img/ecc55adf02424279995176b6d25e4373.png#center)
 ![Screenshot_20221110-014008_XPrivacyLua Pro.png](/assets/img/077f14dca7b0431cb51bcd70992e26b2.png)
 
-1.  **三星pay如果没有三星手机暂时应该是废了？**  
+4.  **三星pay如果没有三星手机暂时应该是废了？**  
 **3和2**的方法可以运行play里的pay插件，但是无法连接到服务器绑不上卡。  
 5.  **软件去哪下？**  
 **apkmirro**r站可以下载一部分wear os软件，关键字是wear os，需要用adb进行安装，也可以手机装个wear installer之类的用手机加载。开发者模式的入口在关于>软件信息>软件版本。比较实用的比如pixel watch的表面，三星浏览器，shazam识歌，google massage，yaoyao跳绳，洗手提醒有点费电也不太实用只是好玩，sumsang自家的一些适配软件等。毕竟谷歌被阉掉了相当限制一大部分功能。可以逛逛xda的galaxy watch 4的条目。手机可以使用galaxy store的远古版本，可以到apkpure下载，但是只能限制中国版本切美版会启动不起来。国内有零星几个三方市场，软件也都是从别的表里提取的，适配程度很一般。有些功能主要还得靠手机的花式推送。比如使用automate或者是tasker之类的。  
