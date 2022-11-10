@@ -31,6 +31,9 @@ layout: default
  <!-- Link Gitalk  -->
  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+ <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+
 
  <div id="gitalk-container"></div>     <script type="text/javascript">
      var gitalk = new Gitalk({
@@ -41,7 +44,7 @@ layout: default
          repo: 'pbbqdd.github.io', //customize
          owner: 'pbbqdd', //customize
          admin: ['pbbqdd'], //customize
-         id: md5(location.pathname), // leave this line as it is
+         id: md5(window.location.pathname), // leave this line as it is
         
      });
      gitalk.render('gitalk-container');
