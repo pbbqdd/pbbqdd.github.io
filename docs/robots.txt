@@ -1,3 +1,5 @@
-># allow google
+# allow google
 User-agent: *
 Allow: /
+
+Sitemap: https://blog.qicib.com/sitemap.xml
