@@ -1,8 +1,8 @@
 ---
 layout: "post"
 title: "三星Galaxy Watch 5国行使用品鉴"
-date: "2022-11-10 17：26"
-
+date: "2022-11-10 17：26
+tag:wear os,Galaxy watch 5,
 ---
 作为伪三星粉最近搞了块三星Galaxy watch 5（后文简称GW5）手表。之所以看好gw5主要是喜欢它的圆表盘和wear OS 3的系统加持当然还有盼着有朝一日和google paly接轨以及以前有个gw active2的遗留问题。手表分国际版和国行版，国行版屏蔽了google套装，但是国际版又多了你400块钱还没保修。贫穷想象力让我趁着双11买了国行版。买之前在网络上大概搜了下国国行的面临的问题主要是只支持国行手机系统不过好在有人已经搞定了gw4的配对，那么gw5照抄应该问题不大。
 
@@ -17,9 +17,9 @@ gw4的国行手表配对教程主要是这一篇。gw5就不多说了有需要�
 > 连接方法如下：1）手机预先下载应用Galaxy Wearable（三星智能穿戴）、Samsang Health（三星健康）下载连接：http://apps.samsung.cn/gear
 > 2）打开三星健康，并登录三星账户
 > 在设置界面，找到配件，扫描配件，找到对应型号的手表连接；
-> 
+>
 > 3）连接过程中，会提示下载Wear OS by Google、Galaxy Watch4 Plugin/Galaxy Watch5 Plugin（均为连接手表必备软件），点击允许下载安装；
-> 
+>
 > 4）安装好无需打开，回到三星智能穿戴，根据步骤安装、允许权限使用，即可连接使用；
 > 注意：连接手表使用时，会提示是否安装Wear OS by google及Galaxy Watch4 Plugin，需要全部安装才可以正常使用手表功能。
 > Wear OS by google及Galaxy Watch4 Plugin/Galaxy Watch5 Plugin、SAMSUNG Health（三星健康）连接手表必备软件，不能删除。
