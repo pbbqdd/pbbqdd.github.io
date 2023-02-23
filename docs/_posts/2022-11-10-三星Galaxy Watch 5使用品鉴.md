@@ -31,7 +31,7 @@ gw4的国行手表配对教程主要是这一篇。gw5就不多说了有需要�
 **wear os** 的系统语言是和手机里的GW5 manager的语言相匹配的，程序独立设置语言这个功能在android 13才被实现，所以lineage os 19目前还没有这个功能。所以只能用插件解决。推荐使用插件APP settings Reborn。这个插件目前可以解决app独立语言问题。设置中的关键字是Locale，其他默认即可。手机设置好后重启手表。  
 
 2.  **因为使用过Galaxy Watch active 2，曾经把国行的手表刷成美版来解锁美版的商店和美版的运动附加功能。**  
-**三星**账号归属是美国，导致和国行手表冲突。不能同步step 不能备份，不能各种舒服。解决方法是XPrivacyLua插件。之所以使用这个插件是因为定制化高，免费。这个插件可以自定义各种钩子，本来想尝试用此插件一起解决1的问题，但是好像没搞通。使用这个插件比较麻烦，主要的钩子项是TelephonyManager/getSimOperatin设置的给的运营商代号310440即可。需要拦截三星健康和穿戴相关程序让sim卡的归属到美国来解锁美国的相关功能。具体玩法参考[This](https://blog.1a23.com/2020/03/25/switch-galaxy-wearable-store-location-using-xprivacylua/)。可以直接在原脚本上赋值`fake=‘310410’`然后勾选即可。但是这个方法解决不了galaxy store 的中国版问题。手表上依然只能使用国行的市场。  
+**三星**账号归属是美国，导致和国行手表冲突。不能同步step 不能备份，不能各种舒服。解决方法是XPrivacyLua插件。之所以使用这个插件是因为定制化高，免费。这个插件可以自定义各种钩子，本来想尝试用此插件一起解决1的问题，但是好像没搞通。使用这个插件比较麻烦，主要的钩子项是TelephonyManager/getSimOperatin设置的给的运营商代号310440即可。需要拦截三星健康和穿戴相关程序让sim卡的归属到美国来解锁美国的相关功能。具体玩法参考[This](https://blog.1a23.com/2020/03/25/switch-galaxy-wearable-store-location-using-xprivacylua/)。可以直接在原脚本上赋值`fake=‘310410’`然后勾选即可。但是这个方法解决不了galaxy store 的中国版问题。手表上依然只能使用国行的市场。开始配对时需要勾到waerable程序上否则可能提示sim卡和账号不符影响配对。
 ![Screenshot_20221110-012413_XPrivacyLua Pro.png](/assets/img/fd964aa6688a4aa39c618f6496122839.png)
 
 3.  **支付宝和微信步数同步问题。**  
