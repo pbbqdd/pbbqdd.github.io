@@ -1,0 +1,25 @@
+---
+layout: "post"
+title: "三星GW5国行刷机"
+date: "2023-2-23"
+tags: wear_os galaxywatch5
+---
+话接上一章,手表和手机的不明兼容原因导致断开连接结果配不上对了。手机使用了 Lineage OS 20，并安装了 Google 的框架，与其折腾手机不如直接搞搞手表,顺便装个google.在xda坛子混了一个多月,也没个正经的刷机指南,不过从几个长期更新的条目里找到些有用的信息.所以我试着用以前的经验吃个螃蟹将手表更改为其他区域。
+以下是我的指南：
+A. 下载 @adfree 的 tar 包并提取 7z文件.[原帖在这里](https://forum.xda-developers.com/t/firmware-and-combination-firmware-and-fota-delta-and-csc-change-and.4323469/page-30#post-87903011)
+
+B. 下载 NetOdin。
+
+C. 关闭手表并同时按下电源和自定义双按钮。
+
+D. 等待手表启动，你会看到三星标志下面有“重启”。然后快速按下电源按钮三次。
+
+E. 手表会进入快速启动模式。按下电源按钮短按选择无线，长按确认。
+
+F. 进入无线下载，按下电源开关 AP 模式，使用你的 PC 无线连接它。
+
+G. 打开 NetOdin 并在 AP 选择中选择 tar 文件并选中它。开始刷写。
+
+H. 开始刷写，这需要大约 1 小时的时间，我使用的是 Linux PC，通过 Wine 运行 NetOdin。
+
+截至目前刷机方法支持最新的国行更新.
