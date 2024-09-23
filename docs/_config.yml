@@ -29,8 +29,8 @@ url: "https://blog.fttft.com"  # the base hostname & protocol for your site, e.g
 github_username:  pbbqdd
 
 # Build settings
-# theme: minima
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+theme: minima
+# remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
